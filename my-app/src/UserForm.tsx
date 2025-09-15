@@ -5,6 +5,8 @@ interface UserFormData {
   name: string;
   email: string;
   password: string;
+  phoneNumber: string;
+
 }
 
 const UserForm: React.FC = () => {
@@ -12,6 +14,7 @@ const UserForm: React.FC = () => {
     name: "",
     email: "",
     password: "",
+    phoneNumber: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,6 +62,16 @@ const UserForm: React.FC = () => {
             type="password"
             name="password"
             value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Phone Number"
+            type="phone"
+            name="phone"
+            value={formData.phoneNumber}
             onChange={handleChange}
             required
           />
